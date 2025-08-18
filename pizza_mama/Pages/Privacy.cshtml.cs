@@ -18,14 +18,14 @@ namespace pizza_mama.Pages
 
         public void OnGet()
         {
-            var pizza = new Pizza
-            {
-                nom = "test",
-                prix = 4,
-                ingredients ="R.A.S"
-            };
-            _dataContext.Pizzas.Add(pizza);
-            _dataContext.SaveChanges();
+            //var pizza = new Pizza
+            //{
+            //    nom = "test",
+            //    prix = 4,
+            //    ingredients ="R.A.S"
+            //};
+            //_dataContext.Pizzas.Add(pizza);
+            //_dataContext.SaveChanges();
         }
     }
 
