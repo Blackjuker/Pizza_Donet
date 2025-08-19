@@ -11,6 +11,7 @@ using pizza_mama.Models;
 
 namespace pizza_mama.Pages.Admin.Pizzas
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly pizza_mama.Data.DataContext _context;
