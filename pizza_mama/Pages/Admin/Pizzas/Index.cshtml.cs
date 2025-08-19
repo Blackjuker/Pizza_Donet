@@ -27,5 +27,10 @@ namespace pizza_mama.Pages.Admin.Pizzas
         {
             Pizza = await _context.Pizzas.ToListAsync();
         }
+
+        public void OnPost()
+        {
+            Console.WriteLine("toto");
+        }
     }
 }
