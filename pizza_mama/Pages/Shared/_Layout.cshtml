@@ -27,7 +27,7 @@
                         </li>
                     </ul>
                 </div>
-                @if()
+                @if (Context.User.Identity.IsAuthenticated) 
                 {
                     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
                         <ul class="navbar-nav">

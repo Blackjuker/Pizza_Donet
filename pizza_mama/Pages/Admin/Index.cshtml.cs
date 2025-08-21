@@ -9,6 +9,11 @@ namespace pizza_mama.Pages.Admin
 {
     public class IndexModel : PageModel
     {
+        private readonly IConfiguration _configuration;
+        public IndexModel(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         public IActionResult  OnGet()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
@@ -19,7 +24,10 @@ namespace pizza_mama.Pages.Admin
         }
         public async Task<IActionResult> OnPost(string username, string password,string ReturnUrl) 
         {
-            if(username== "admin")
+            var  authSection = _configuration.GetSection("Auth");
+            string adminLogin = authSection["AdminLogin"]!;
+            string adminPassword = authSection["AdminPassword"]!;
+            if(username== adminLogin && password == adminPassword)
             {
                 var claims = new List<Claim>
                  {
