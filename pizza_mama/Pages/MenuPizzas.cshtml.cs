@@ -18,7 +18,7 @@ namespace pizza_mama.Pages
         public IList<Pizza> Pizza { get; set; } = default!;
         public async Task OnGet()
         {
-            Pizza = await _context.Pizzas.ToListAsync();
+            Pizza = await _context.Pizzas.OrderBy(p => p.prix).ToListAsync();
         }
     }
 }

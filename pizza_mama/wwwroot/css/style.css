@@ -1,12 +1,13 @@
 ﻿body {
-    background: url("/images/menu_background.jpg") no-repeat center center fixed;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/menu_background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family:Arial;
-    margin:0px; 
-    color:white;
+    font-family: Arial;
+    margin: 0px;
+    color: white;
+    background-attachment: scroll;
 }
 li{
     color:white;
@@ -47,6 +48,7 @@ h1{
     color:#D8D8D8;
     font-size:14px;
     display:block;
+    width:320px;
 }
 .menu_list_badge {
     color: black;
