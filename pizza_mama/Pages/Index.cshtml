@@ -7,11 +7,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>PizzaMama Accueil</title>
+    <link rel="stylesheet" href="~/css/style.css" />
 </head>
-    <body>
-    <div class="text-center">
-        <h1 class="display-4">PizzaMama Accueil</h1>
-        <p>Learn about <a asp-page="MenuPizzas">Voir le menu des pizzas</a>.</p>
+    <body class="homePage">
+    <div class="centered">
+        <a asp-page="Index"> <img src="/images/main_logo.png" alt="Main logo" /></a>
+        <a class="homePage"  asp-page="MenuPizzas">Voir le menu</a>
     </div>
     </body>
 </html>
