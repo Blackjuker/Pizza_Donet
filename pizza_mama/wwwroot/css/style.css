@@ -48,3 +48,13 @@ h1{
     font-size:14px;
     display:block;
 }
+.menu_list_badge {
+    color: black;
+    background-color: #DD7835;
+    font-size:9px;
+    margin-top:6px;
+    display:inline-block;
+    font-weight:bold;
+    border-radius:8px;
+    padding:3px 8px;
+}
