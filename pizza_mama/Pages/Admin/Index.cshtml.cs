@@ -10,12 +10,15 @@ namespace pizza_mama.Pages.Admin
     public class IndexModel : PageModel
     {
         private readonly IConfiguration _configuration;
+        [BindProperty]
+        public bool IsError { get; set; } = false;
         public IndexModel(IConfiguration configuration)
         {
             _configuration = configuration;
         }
         public IActionResult  OnGet()
         {
+            IsError = false;
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 return Redirect("/admin/Pizzas");
@@ -29,14 +32,18 @@ namespace pizza_mama.Pages.Admin
             string adminPassword = authSection["AdminPassword"]!;
             if(username== adminLogin && password == adminPassword)
             {
+                IsError = false;
                 var claims = new List<Claim>
                  {
                      new Claim(ClaimTypes.Name,username)
                  };
                 var claimIdentity = new ClaimsIdentity(claims, "Login");
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimIdentity));
+                
                 return Redirect(ReturnUrl == null ? "/Admin/Pizzas" : ReturnUrl);
+                
             }
+            IsError = true;
             return Page();
         }
 
