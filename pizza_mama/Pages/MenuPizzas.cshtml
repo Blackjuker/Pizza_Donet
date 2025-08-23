@@ -20,7 +20,7 @@
         {
             <div class="menu_list_item">
                 <span class="menu_list_title">@pizza.nom</span>
-                <span class="menu_list_price">@pizza.prix€</span>
+                <span class="menu_list_price">@String.Format("{0:0.00}", @pizza.prix)€</span>
                 <span class="menu_list_ingredients">@pizza.ingredients</span>
             </div>
         }

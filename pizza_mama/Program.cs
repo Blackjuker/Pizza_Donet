@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using pizza_mama.Data;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,12 @@ builder.Services.AddRazorPages();
 
 
 var app = builder.Build();
+
+//forcer la culture pour les décimales
+var cultureInfo = new CultureInfo("fr-Fr");
+cultureInfo.NumberFormat.NumberDecimalSeparator = ".";
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
